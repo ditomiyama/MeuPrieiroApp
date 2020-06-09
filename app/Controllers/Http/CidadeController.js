@@ -19,6 +19,21 @@ class CidadeController {
     return cidade;
   }
 
+  //aqui
+  //deve ser
+  //criado
+  //todos
+  //metodos
+  //de banco
+
+  /*async store ({ request, response }){
+    const data = request.only(Cidade.fillable);
+
+    const cidade = await Cidade.create(data);
+    
+    return cidade;
+  }*/
+
 }
 
 module.exports = CidadeController

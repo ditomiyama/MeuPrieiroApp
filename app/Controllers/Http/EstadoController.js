@@ -35,6 +35,13 @@ class EstadoController {
     return estado;
   }*/
 
+  //aqui
+  //deve ser
+  //criado
+  //todos
+  //metodos
+  //de banco
+
 
   async store ({ request, response }){
     const data = request.only(Estado.fillable);
@@ -51,6 +58,20 @@ class EstadoController {
     const estado = await Estado.create(data);
 
     return estado;
+  }*/
+
+  //aqui
+  //deve ser
+  //criado
+  //todos
+  //metodos
+  //de banco
+
+  /*async index() {
+    const estados = await Estado.query().with("pais").fetch();
+    // add varios comentarios
+    //retorno
+    return estados;
   }*/
 
 }
