@@ -16,6 +16,9 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.post('/sessions', 'SessionController.store');
+Route.resource('/users', 'UserController').apiOnly();
+Route.resource('/cidades', 'CidadeController').apiOnly();
+Route.resource('/estados', 'EstadoController').apiOnly();
+Route.resource('/pais', 'PaisController').apiOnly();
+

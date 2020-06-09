@@ -7,6 +7,9 @@ const Model = use('Model')
 const Hash = use('Hash')
 
 class User extends Model {
+  static get fillable(){
+    return ['name', 'endereco', 'idade', 'apelido', 'niver', 'email', 'password']
+  }
   static boot () {
     super.boot()
 
@@ -34,6 +37,11 @@ class User extends Model {
   tokens () {
     return this.hasMany('App/Models/Token')
   }
+
+  cidades () {
+    return this.belongsTo('App/Models/Cidade')
+  }
+
 }
 
 module.exports = User
