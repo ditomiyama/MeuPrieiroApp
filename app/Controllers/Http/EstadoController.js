@@ -26,15 +26,32 @@ class EstadoController {
     return estado;
   }
 
-  async store({ request, response }) {
+  /*async store({ request, response }) {
     const data = request.only(Estado.fillable);
     // add varios comentarios
     //contante
     const estado = await Estado.create(data);
 
     return estado;
-  }
+  }*/
 
+  //aqui
+  //deve ser
+  //criado
+  //todos
+  //metodos
+  //de banco
+
+
+  async store ({ request, response }){
+    const data = request.only(Estado.fillable);
+    // add varios comentarios
+    //contante
+    const estado = await Estado.create(data);
+    
+    return estado;
+  }
+  
   async delete({ params: { id }, request, response }) {
     const estado = await Estado.findOrFail(id);
     // add varios comentarios
@@ -51,6 +68,21 @@ class EstadoController {
 
     return estado;
   }*/
+
+  //aqui
+  //deve ser
+  //criado
+  //todos
+  //metodos
+  //de banco
+
+  /*async index() {
+    const estados = await Estado.query().with("pais").fetch();
+    // add varios comentarios
+    //retorno
+    return estados;
+  }*/
+
 }
 
 module.exports = EstadoController;
