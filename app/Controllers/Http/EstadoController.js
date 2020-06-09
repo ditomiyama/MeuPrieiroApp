@@ -21,6 +21,7 @@ class EstadoController {
     const estado = await Estado.findOrFail(params.id)
       await estado.load('pais')
       //await estado.getRelated('pais')
+      //teste
     return estado
 }
 
