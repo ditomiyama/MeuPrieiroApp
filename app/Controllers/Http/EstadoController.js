@@ -1,10 +1,10 @@
-'use strict'
+"use strict";
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
-const Estado = use('App/Models/Estado')
+const Estado = use("App/Models/Estado");
 
 /**
  * Resourceful controller for interacting with estados
@@ -17,32 +17,31 @@ class EstadoController {
     return estados;
   }
 
-  async show ({ params }) {
-    const estado = await Estado.findOrFail(params.id)
-      await estado.load('pais');
-      // add varios comentarios
-      //await estado.getRelated('pais')
-      //teste
-    return estado
-}
-
-/*async store ({ request, response }){
-    const data = request.only(Estado.fillable);
-
+  async show({ params }) {
+    const estado = await Estado.findOrFail(params.id);
+    await estado.load("pais");
     // add varios comentarios
-    const estado = await Estado.create(data);
-
+    //await estado.getRelated('pais')
+    //teste
     return estado;
-  }*/
+  }
 
-
-  async store ({ request, response }){
+  async store({ request, response }) {
     const data = request.only(Estado.fillable);
     // add varios comentarios
     //contante
     const estado = await Estado.create(data);
-    
+
     return estado;
+  }
+
+  async delete({ params: { id }, request, response }) {
+    const estado = await Estado.findOrFail(id);
+    // add varios comentarios
+    //contante
+    await estado.delete();
+
+    return {};
   }
 
   /*async store ({ request, response }){
@@ -52,7 +51,6 @@ class EstadoController {
 
     return estado;
   }*/
-
 }
 
 module.exports = EstadoController;
